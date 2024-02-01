@@ -1,0 +1,14 @@
+<div>
+  <h2>Random Quote</h2>
+  <p>
+    <strong>Author:</strong> {{ author }}
+  </p>
+  <p>
+    <strong>Quote:</strong> {{ content }}
+  </p>
+
+</div>
+<div *ngIf="errorMessage">
+  <h2>Error</h2>
+  <p>{{ errorMessage }}</p>
+</div>

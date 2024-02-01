@@ -1,0 +1,40 @@
+<!-- toggle the "special" class on/off with a property -->
+<div [ngClass] = "isSpecial ? 'special' : ''">This div is special</div>
+
+<div [ngClass]="currentClasses">This div is initially saveable, unchanged, and special.</div>
+
+<div [ngStyle]="currentStyles">
+    This div is initially italic, normal weight, and extra large (24px).
+</div>
+
+  <form>
+    <input type="text" name="inputField" [(ngModel)]="currentItem.name" >
+    <p>{{currentItem.name}}</p>
+
+    <input [ngModel]="currentItem.name" (ngModelChange)="setUppercaseName($event)" id="example-uppercase" name="example-uppercase">
+    <p>{{currentItem.name}}</p>
+  </form>
+
+  <div *ngIf="currentItem">Hello, {{currentItem.name}}</div>
+
+  <div *ngIf="nullCustomer">Hello, <span>{{nullCustomer}}</span></div>
+  
+  <ul>  
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+
+  <div *ngFor="let item of items; let i=index">{{i + 1}} - {{ item }}</div>
+
+
+  <div [ngSwitch]="currentItem.name">
+    <p *ngSwitchCase="'one'">First choice</p>
+    <p *ngSwitchCase="'two'">Second choice</p>
+    <p *ngSwitchCase="'three'">Third choice</p>
+    <p *ngSwitchDefault>Default choice</p>
+  </div>
+
+
+  <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum in vitae ad quae ratione doloribus, sint cum hic qui quo totam commodi,
+      <ng-container *ngIf="true"><strong>my container</strong></ng-container> {{ true ? "sriharyi": "none" }} aliquam blanditiis sequi est vel animi praesentium error?
+  </p>
